@@ -1,3 +1,6 @@
+Go to vagrant-vms folder in vs code
+Copy wordpress file and paste it and rename as wordpressIAC
+in Vagrantfile :
 sudo apt update
 sudo apt install apache2 \
                  ghostscript \
@@ -52,3 +55,5 @@ sudo -u www-data sed -i 's/password_here/<admin123' /srv/www/wordpress/wp-config
 
 systemctl restart MySQL
 systemctl restart apache2
+in git bash 
+vagrant up and vagrant destroy
