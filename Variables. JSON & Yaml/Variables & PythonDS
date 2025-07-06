@@ -1,0 +1,37 @@
+skill="DevOps"
+echo $skill //DevOps
+echo skill  //skill
+echo "Iam learning $skill" //Iam learning DevOps
+NUM=123
+echo $NUM  //123
+
+in any compiler:
+#String Variables
+skill="DevOps"
+print(skill)
+
+#Integer
+NUM=123
+print(NUM)
+
+#List
+tools=["Jenkins", "Docker", "K8S", "Terraform", 90]
+print(tools)
+print(tools[0])
+print(tools[-1])
+print(tools[1])
+print(tools[1:4])
+print(tools[1:4][1])
+
+#Tuple
+tools=("Jenkins", "Docker", "K8S", "Terraform", 90)
+print(tools)
+
+#Dictionary
+devops={"skill":"DevOps", "Year":2025, "Tech":"", "GitOps":""}
+print(devops)
+print(devops["skill"])
+print(devops["skill"][0])
+
+
+
