@@ -7,35 +7,35 @@
   Working on project which has varieties of services that power the project runtime, also have a runbook/ setup document.
 
   ### Problem
-  Not comfortable in making changes in real servers
-  Local setup is complex
-  Time consuming
-  Non repeatable
+  - Not comfortable in making changes in real servers
+  - Local setup is complex
+  - Time consuming
+  - Non repeatable
 
   ### Solution
   Local setup that is automated, repeatable because of IAAC
 
   ## Tools
-  Hypervisor : Oracle VM Virtual box
-  Automation : Vagrant
-  CLI : Git Bash
-  IDE : VS Code
+ -  Hypervisor : Oracle VM Virtual box
+  - Automation : Vagrant
+  - CLI : Git Bash
+  - IDE : VS Code
 
   ### Objective
-  VM automation locally
-  Real world project setup locally
+  - VM automation locally
+  - Real world project setup locally
 
   ## Architecture Of Project Services
-  Nginx
-  Tomcat
-  Rabbitmq
-  Memcached
-  MYSQL
+  - Nginx
+  - Tomcat
+  - Rabbitmq
+  - Memcached
+  - MYSQL
 
   ## Architecture Of Automated Setup
-  Vagrant
-  VirtualBox
-  Git Bash
+ -  Vagrant
+  - VirtualBox
+  - Git Bash
 
  User will enter ip add in browser of load balancer, we are using nginx web service to create load balancer, which will route req to tomcat server, user will login and data will be stored in mysql.RabbitMQ used as message broker. 
  ### Flow
