@@ -1,0 +1,96 @@
+Apache Tomcat : free, open-source, Java Servlet container used to host java based web apps , provides dynamic content and handling web requests
+
+Content : 
+1. Manual method to start tomcat
+2. Issues with manual setup
+3. Systemd Req
+4. Create systemctl for tomcat
+
+1. in git bash : vagrant up the centos vm and login 
+vagrant ssh
+sudo -i
+to check vm : cat /etc/os-release
+dnf install httpd -y //install httpd
+systemctl status httpd
+ls /usr/lib/systemd/system/
+cat /usr/lib/systemd/system/httpd.service
+ls /etc/httpd/
+ls /var/log/httpd/
+cat /usr/lib/systemd/system/httpd.service
+wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.43/bin/apache-tomcat-10.1.43.tar.gz
+tar xzvf apache-tomcat-10.1.43.tar.gz
+ls
+ls  apache-tomcat-10.1.43
+dnf install java-17-openjdk -y
+java -version
+ls
+ls apache-tomcat-10.1.43/bin/
+cd apache-tomcat-10.1.43/
+bin/startup.sh
+ps -ef | grep tomcat
+ip addr show
+http://192.168.1.12:8080 in browser
+
+2. Issues with manual setup : When you run something manually (like ./startup.sh), it won't start automatically next time the system reboots.
+With systemctl, you can do:
+sudo systemctl enable tomcat
+→ and it will automatically start on boot.
+
+kill process_id
+ps -ef | grep tomcat
+
+3. & 4. Systemd file
+
+ useradd --home-dir /opt/tomcat --shell /sbin/nologin tomcat
+cp -r * /opt/tomcat/
+chown -R tomcat.tomcat /opt/tomcat/
+ls -l /opt/tomcat/
+vim /etc/systemd/system/tomcat.service
+cat  /etc/systemd/system/tomcat.service
+[Unit]
+Description=Apache Tomcat Web Application Container
+After=network.target
+
+[Service]
+Type=forking
+
+User=tomcat
+Group=tomcat
+
+WorkingDirectory=/opt/tomcat
+
+# Set JAVA_HOME to JDK 17
+Environment="JAVA_HOME=/usr/lib/jvm/java-17-openjdk-17.0.15.0.6-3.el9.x86_64"
+Environment="CATALINA_HOME=/opt/tomcat"
+Environment="CATALINA_BASE=/opt/tomcat"
+Environment="CATALINA_PID=/opt/tomcat/temp/tomcat.pid"
+
+ExecStart=/opt/tomcat/bin/startup.sh
+ExecStop=/opt/tomcat/bin/shutdown.sh
+
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+save and quit :wq
+kill all processes
+sudo systemctl daemon-reload
+sudo systemctl stop tomcat
+sudo systemctl start tomcat
+sudo systemctl enable tomcat
+sudo systemctl status tomcat
+
+
+
+
+
+
+
+
+
+
+
+
