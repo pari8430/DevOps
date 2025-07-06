@@ -1,0 +1,35 @@
+JSON :
+To read data
+{
+          "skill":"DevOps",
+           "Year":2025, 
+           "Tech":
+               {
+                   "Cloud":"AWS", 
+                   "Containers":"K8s", 
+                   "CICD":"Jenkins", 
+                   "GitOps":
+                       [
+                           "GitLab", 
+                           "ArgoCd", 
+                           "Tekton"
+                        ]
+                   
+               } 
+    
+}
+
+YAML :
+To write config
+devops : 
+  skill: DevOps
+  Year: 2025
+  Tech:
+     Cloud: AWS
+     Containers: K8s
+     CICD: Jenkins
+     GitOps:
+          - GitLab
+          - ArgoCd
+          - Tekton
+
