@@ -38,7 +38,7 @@
   - Git Bash
 
  User will enter ip add in browser of load balancer, we are using nginx web service to create load balancer, which will route req to tomcat server, user will login and data will be stored in mysql.RabbitMQ used as message broker. 
-![Tomcat Screenshot 1](Images/img/Screenshot%202025-07-07%20005311.png)
+![Tomcat Screenshot 1](Screenshot%202025-07-07%20005311.png)
 
  ### Flow
  1. Setup tools
