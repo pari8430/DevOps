@@ -1,0 +1,34 @@
+ LogintotheNginxvm
+ $ vagrant ssh web01
+ $ sudo-i
+
+ VerifyHostsentry, ifentriesmissingupdatetheitwithIPandhostnames
+ # cat /etc/hosts
+
+ UpdateOSwithlatestpatches
+ # apt update
+ # apt upgrade
+
+ Installnginx
+ # apt install nginx-y
+
+ CreateNginxconf file
+ # vi /etc/nginx/sites-available/vproapp
+
+Updatewithbelowcontent
+ upstream vproapp {
+ server app01:8080;
+ }
+ server {
+ listen 80;
+ location / {
+ proxy_pass http://vproapp;
+}
+ }
+
+ Remove default nginx conf
+ # rm-rf /etc/nginx/sites-enabled/default
+ Create link to activate website
+ # ln-s /etc/nginx/sites-available/vproapp /etc/nginx/sites-enabled/vproapp
+ Restart Nginx
+ # systemctl restart nginx
