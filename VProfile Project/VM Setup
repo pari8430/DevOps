@@ -13,6 +13,20 @@ Prerequisite :
  4. cd into vagrant/Manual_provisioning
  Bring up vm’s
  $ vagrant up
+vagrant ssh web01
+sudo -i
+cat /etc/hosts 
+//192.168.56.12   app01
+
+192.168.56.15   db01
+
+192.168.56.14   mc01
+
+192.168.56.13   rmq01
+
+192.168.56.11   web01
+ ping app01 -c 4
+
 
 PROVISIONING
  Services
