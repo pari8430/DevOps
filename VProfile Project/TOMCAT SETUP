@@ -1,0 +1,66 @@
+ Logintothetomcatvm
+ $ vagrant ssh app01
+
+ VerifyHostsentry, ifentriesmissingupdatetheitwithIPandhostnames
+ # cat /etc/hosts
+
+ UpdateOSwithlatestpatches
+ # yum update-y
+
+ SetRepository
+ # yum install epel-release-y
+
+ InstallDependencies
+ # dnf-y install java-11-openjdk java-11-openjdk-devel
+ # dnf install git maven wget-y
+
+ Changedirto/tmp
+ # cd /tmp/
+
+Download&TomcatPackage
+ # wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.75/bin/apache-tomcat-9.0.75.tar.gz
+ # tar xzvf apache-tomcat-9.0.75.tar.gz
+
+Addtomcatuser
+ # useradd--home-dir /usr/local/tomcat--shell /sbin/nologin tomcat
+
+ Copydatatotomcathomedir
+ # cp-r /tmp/apache-tomcat-9.0.75/* /usr/local/tomcat/
+
+ Maketomcatuserownerof tomcathomedir
+ # chown-R tomcat.tomcat /usr/local/tomcat
+
+ Setupsystemctlcommandfortomcat
+ Createtomcatservicefile
+ # vi /etc/systemd/system/tomcat.service
+
+ Updatethefilewithbelowcontent
+ [Unit]
+ Description=Tomcat
+ After=network.target
+ [Service]
+ User=tomcat
+ WorkingDirectory=/usr/local/tomcat
+ Environment=JRE_HOME=/usr/lib/jvm/jre
+ Environment=JAVA_HOME=/usr/lib/jvm/jre
+ Environment=CATALINA_HOME=/usr/local/tomcat
+ Environment=CATALINE_BASE=/usr/local/tomcat
+ ExecStart=/usr/local/tomcat/bin/catalina.sh run
+ ExecStop=/usr/local/tomcat/bin/shutdown.sh
+ SyslogIdentifier=tomcat-%i
+[Install]
+ WantedBy=multi-user.target
+
+ Reloadsystemdfiles
+ # systemctl daemon-reload
+
+ Start&Enableservice
+ # systemctl start tomcat
+ # systemctl enable tomcat
+
+ Enablingthefirewallandallowingport8080toaccessthetomcat
+ # systemctl start firewalld
+ # systemctl enable firewalld
+ # firewall-cmd--get-active-zones
+ # firewall-cmd--zone=public--add-port=8080/tcp--permanent
+ # firewall-cmd--reload
