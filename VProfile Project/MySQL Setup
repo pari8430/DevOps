@@ -1,0 +1,38 @@
+vagrant up
+vagrant ssh db01
+cat /etc/hosts //Verify host entries ip
+dnf update -y //update OS with latest patches
+dnf install epel-release -y //set repo
+dnf install git mariadb-server -y //install maria db pkg
+sudo systemctl start maridb //start server
+sudo systemctl enable maridb //enable server
+sudo systemctl status maridb
+mysql_secure_installation 
+
+//SetDBnameandusers.
+mysql -u root -padmin123
+create database accounts;
+ grant all privileges on accounts.* TO 'admin'@'localhost' identified by 'admin123';
+ grant all privileges on accounts.* TO 'admin'@'%' identified by 'admin123';
+FLUSH PRIVILEGES
+exit
+
+ DownloadSourcecode&InitializeDatabase.
+ # git clone -b local https://github.com/hkhcoder/vprofile-project.git
+ # cd vprofile-project
+ # mysql-u root-padmin123 accounts < src/main/resources/db_backup.sql
+ # mysql-u root-padmin123 accounts
+
+ mysql> show tables;
+ mysql> exit;
+
+ Restartmariadb-server
+ # systemctl restart mariadb
+
+ Startingthefirewallandallowingthemariadbtoaccessfromportno.3306
+ # systemctl start firewalld
+ # systemctl enable firewalld
+ # firewall-cmd--get-active-zones
+ # firewall-cmd--zone=public--add-port=3306/tcp--permanent
+ # firewall-cmd--reload
+ # systemctl restart mariadb
