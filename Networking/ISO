@@ -1,0 +1,31 @@
+Computer Network : Communication between two or more network interfaces.
+
+Components of CN:
+1. Two/more computers/devices
+2. Cables as links between the computers
+3. A NIC on each
+4. computer
+5. Switches
+6. Routers
+7. Software called OS
+
+OSI Model :
+- People around the world uses computer network to communicate with each other.
+- For worldwide data communication, systems must be developed which are compatible to communicate with each other.
+- There should be standard of comm methods and devices.
+- ISO (International Org of Standardization) has developed this std.
+
+OSI Model : Open System Interconnection -
+ISO-OSI model is a 7 layer arch developed in 1984.
+-Physical-> DLL-> NW-> Transport-> Session-> Presentation-> Application
+
+The basic elements of a layered model are :
+- services
+- protocols
+- interfaces
+
+1. A service is a set of actions that a layer offers to another (higher) layer.
+2. A protocol is a set of rules that a layer uses to exchange info.
+3. A interface is communication between layers.
+
+
