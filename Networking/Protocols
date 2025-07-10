@@ -1,0 +1,2 @@
+A formal specification that defines the procedures that must be followed when transmitting or receiving data.
+Protocols define the format, timing, sequence , and error checking used on the network.
