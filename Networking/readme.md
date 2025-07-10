@@ -6,7 +6,7 @@ This diagram illustrates the OSI Model layers, data units, and functions.
 
 
 
-![OSI Encapsulation Table](Networking/Images/OSI_Encapsulation_Table.png)
+![OSI Encapsulation Table](Images/OSI_Encapsulation_Table.png)
 
 
 
