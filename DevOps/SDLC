@@ -1,0 +1,17 @@
+1. PLANNING :
+planning -> define project scope -> set obj and goals -> resource planning
+
+2. DEFINE REQ :
+define -> functional req -> technical req -> req review and approved
+
+3. DESIGN ARCH :
+design -> lld -> hld
+
+4. DEVELOPMENT :
+development -> coding std -> scalable code -> version control -> code review
+
+5. TESTING & INTEGRATION :
+system testing -> manual -> automation
+
+6. DEPLOYMENT & MONITORING :
+release planning -> deployment automation -> maintenance -> feedback -> rollback strategies
