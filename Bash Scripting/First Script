@@ -1,0 +1,20 @@
+bring up vm and login 
+mkdir /opt/scripts
+cd /opt/scripts/
+vim firstscript.sh
+   inside file : #!/bin/bash (shabang character)
+   echo "Welcome to bash script."
+   echo
+   echo "The uptime of system is : "
+   uptime
+   echo "Memory Utilization"
+   free -m
+   echo "Disk Utilization"
+   df -h
+
+./firstscript.sh (relative path)
+/opt/scripts/firstscript.sh (absolute path)
+
+
+
+                                                                                                   ~             
