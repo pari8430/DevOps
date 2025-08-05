@@ -1,0 +1,30 @@
+vim 4_args.sh
+#!/bin/bash
+echo "Value of 0"
+echo $0  
+echo "Value of 1"
+echo $1
+echo "Value of 2"
+echo $2
+echo "Value of 3"
+echo $3
+chmod +x 4_args.sh
+./4_args.sh4[root@scriptbox scripts]# ./4_args.sh
+Value of 0
+./4_args.sh
+Value of 1 echo
+Value of 2 echo
+Value of 3 echo
+[root@scriptbox scripts]# ./4_args.sh Linux
+Value of 0
+./4_args.sh
+Value of 1 echo Linux
+Value of 2 echo
+Value of 3 echo
+[root@scriptbox scripts]# ./4_args.sh Linux AWS Ansible
+Value of 0
+./4_args.sh
+Value of 1 echo Linux
+Value of 2 echo AWS
+Value of 3 echo Ansible
+[root@scriptbox scripts]#
