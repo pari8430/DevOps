@@ -1,0 +1,75 @@
+SKILL="DevOps"
+echo $SKILL //DevOps
+PACKAGE="httpd wget unzip"
+yum install $PACKAGE -y
+cd /opt/scripts/
+ls
+mv firstscript.sh 1_firstscript.sh
+mv websetup.sh 2_websetup.sh
+cp 2_websetup.sh 3_websetup.sh
+#!/bin/bash
+
+#Variable Declaration
+PACKAGE="httpd wget unzip"
+SVC="httpd"
+URL="https//www.tooplate.com/zip-templates/2098_health.zip"
+ART_NAME='2098_health'
+TEMPDIR="/tmp/webfiles"
+
+#Installing Dependencies
+echo "#############################"
+echo "Installing pkgs."
+echo "#############################"
+sudo yum install $PACKAGE -y > /dev/null
+echo
+
+#Start & Enable Service
+echo "#############################"
+echo "Start & Enable HTTPD Service"
+echo "#############################"
+sudo systemctl start $SVC
+sudo systemctl enable $SVC
+echo
+
+#Creating Temp Directory
+echo "#############################"
+echo "Starting Artifact Deployment"
+echo "#############################"
+mkdir -p $TEMPDIR
+cd $TEMPDIR
+echo
+
+wget $URL > /dev/null
+unzip $ART_NAME.zip > /dev/null
+sudo cp -r $ART_NAME/* /var/www/html/
+echo
+
+#Bounce Service
+echo "#############################"
+echo "Restarting HTTPD Service"
+echo "#############################"
+systemctl restart $SVC
+echo
+
+#Clean Up
+echo "#############################"
+echo "Removing temp files"
+echo "#############################"
+rm -rf $TEMPDIR
+echo
+
+sudo systemctl status $SVC  
+ls /var/www/html/   
+:wq
+
+#!/bin/bash
+sudo systemctl stop httpd
+sudo rm -rf /var/www/html/*
+sudo yum remove httpd wget unzip -y 
+vim dismantle.sh
+chmod +x dismantle.sh
+./dismantle.sh
+./3_websetup.sh
+
+
+
