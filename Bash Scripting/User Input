@@ -1,0 +1,3 @@
+read SKILL  
+read -p for prompt
+read -sp supress input
