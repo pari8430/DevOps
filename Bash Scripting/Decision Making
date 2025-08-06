@@ -1,0 +1,14 @@
+If statements : 
+#!/bin/bash
+read -p "Enter a number : " NUM   
+echo                                
+if [ $NUM -gt 100 ]                                                                                    
+  then                                                                                                       
+  echo "We are in IF block."                                                                            
+  sleep 3                                                                                               
+  echo "Num greater than 100"                                                                           
+  echo                                                                                                  
+  date
+else 
+  echo "else part"
+fi  
