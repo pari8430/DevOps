@@ -1,0 +1,3 @@
+UP=`uptime`
+echo $UP
+Store output in variables
