@@ -1,0 +1,20 @@
+AWS offers over 400 fully featured services spanning areas like:
+Compute (e.g., EC2, Lambda)
+Storage (e.g., S3, EBS)
+Databases (e.g., RDS, DynamoDB)
+Machine Learning (e.g., SageMaker)
+Networking (e.g., VPC, CloudFront)
+Security, Analytics, IoT, Developer Tools, and many more.
+
+ AWS has:
+31 geographic Regions worldwide
+99 Availability Zones (AZs) across these regions
+What do these mean?
+Regions: Independent geographic areas (like US East (N. Virginia), Asia Pacific (Mumbai), Europe (Frankfurt), etc.)
+Availability Zones: Isolated data centers within a region designed for high availability and fault tolerance
+
+★ High Availability Through Multiple Availability Zones
+★ Improving Continuity With Replication Between Regions
+★ Meeting Compliance and Data Residency Requirements
+★ Geographic Expansion
+
