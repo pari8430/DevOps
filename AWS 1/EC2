@@ -1,0 +1,10 @@
+➢ EC2 provides web services API for provisioning, managing, and deprovisioning virtual servers inside amazon cloud.
+➢ Ease In Scaling Up/Down
+➢ Pay only for what you use
+➢ Can be integrated into several other services
+
+1. On Demand : Pay per hour or seconds.
+2. Reserved : Reserve Capacity(1 or 3 yrs) for discounts.
+3. Spot : Bid your price for unused ec2 capacity.
+4. Dedicated Hosts : Physical Server dedicated for you.
+
