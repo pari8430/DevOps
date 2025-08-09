@@ -1,0 +1,36 @@
+Securely control access to AWS resources
+
+● Shared access to your AWS account
+● Granular Permission
+● Multi-factor authentication (MFA)
+● IAM Roles
+● Identity federation
+● Free to use
+
+What is S3?
+Simple storage service
+Amazon Simple Storage Service (Amazon S3) is storage for the internet. You can use Amazon S3 to store and retrieve any amount of data at any time, from anywhere on the web.
+● It is Object-Based Storage
+● Data is replicated across multiple facilities
+● Unlimited Storage
+● Amazon S3 stores data as objects within buckets
+● Bucket name has to be unique
+
+A bucket is a logical unit of storage in Amazon Web Services (AWS).
+Object Storage is a computer data storage architecture that manages data as Objects
+
+S3 Storage Classes
+1. S3 Standard: general-purpose storage of frequently accessed data. Fast access & object replication in multi AZ.
+2. S3 IA– Infrequent Access: Long-lived, but less frequently accessed data. Slow access, object replication in multi AZ
+3. S3 One Zone-IA : is for data that is accessed less frequently, but requires rapid access when needed. Slow access, no object replication.
+4. S3 Intelligent Tiering : Automatically moves data to most cost effective tier.
+5. S3 Glacier: Low Cost Storage class for data Archiving.
+S3 Glacier Deep Archive : Lowest cost storage, retrieval time of 12 Hrs.
+
+
+S3 Charges :
+● Storage
+● Requests
+● Tiers
+● Data Transfer
+● Region Replication
