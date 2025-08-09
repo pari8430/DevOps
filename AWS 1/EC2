@@ -8,3 +8,33 @@
 3. Spot : Bid your price for unused ec2 capacity.
 4. Dedicated Hosts : Physical Server dedicated for you.
 
+Amazon Machine Image (AMI) provides the information required to launch an instance, which is a virtual server in the cloud.
+When you launch an instance, the instance type that you specify determines the hardware of the host computer used for your instance
+Amazon EC2 provides you with flexible, cost effective, and easy-to-use data storage options for your instances.
+Tag is a simple label consisting of a customer-defined key and an optional
+value that can make it easier to manage, search for, and filter resources.
+Amazon EC2 uses public–key cryptography to encrypt and decrypt login information.
+A security group acts as a virtual firewall that controls the traffic for one or more instances
+
+Security Groups
+★ A security group acts as a virtual firewall that controls the traffic for one or more instances.
+★ You can add rules to each security group that allow traffic to or from its associated instances
+★ Security groups are "stateful". 
+firewall is a network security system that monitors and controls  incoming and outgoing network traffic
+
+Inbound rule :- Traffic coming from outside on the Instance
+Outbound rule :- Traffic going from Instance to outside 
+
+Requirement Gathering
+1. Toolplate website
+2. OS
+a. Centos
+3. Size => Ram, CPU, Network etc
+a. Min
+4. Storage size
+a. 5 gigs for web server images
+5. Project
+6. Services/Apps Running
+a. SSH, Http, Mysql etc
+7. Environment (Dev, QA, Staging, Prod)
+8. Login User/ Owner
