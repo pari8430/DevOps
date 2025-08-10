@@ -1,0 +1,31 @@
+To install AWS CLI , open powershell as admin : 
+choco install awscli -y
+and in aws console, create IAM user and access key
+
+//Configure it
+pari9@Pari MINGW64 ~
+$ aws --version
+aws-cli/2.27.35 Python/3.13.3 Windows/11 exe/AMD64
+
+pari9@Pari MINGW64 ~
+$ aws configure
+AWS Access Key ID [****************MIEN]: 
+AWS Secret Access Key [****************DDlO]: 
+Default region name [us-east-1]: us-east-1
+Default output format [None]: json
+
+ls ~/.aws/
+config  credentials
+In config you should have region and output 
+In credentials you should have access key id and pass
+
+aws sts get-caller-identity //User details 
+aws ec2 describe-instances
+
+
+
+
+
+
+
+
