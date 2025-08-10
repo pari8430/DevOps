@@ -1,0 +1,27 @@
+ELASTIC BLOCK STORAGE
+★ Block based storage
+★ Runs ec2 OS, store data from db, file data, etc
+★ Placed in specific AZ. Automatically replicated within the AZ to protect from failure.
+★ Snapshot is backup of a volume
+
+EBS Types
+● General Purpose (SSD) ○ Most Work Loads
+● Provisioned IOPS ○ Large Databases
+● Throughput Optimized HD ○ Big Data & Data Warehouses
+● Cold HDD ○ File Servers
+● Magnetic ○ Backups & Archives
+
+Snapshot Backup & Restore
+• Unmount partition
+• Detach volume
+• Create new volume from snapshot
+• Attach the volume created from snapshot
+• Mount it back
+
+Snapshot Use Cases
+• Backup & Restore
+• Size Change
+• Volume type change
+• Copy Volume to different zone
+• Move Snap to different region
+• Share it with other AWS accounts.
