@@ -25,3 +25,9 @@ Snapshot Use Cases
 • Copy Volume to different zone
 • Move Snap to different region
 • Share it with other AWS accounts.
+
+Create ec2 instance and add bash code in description.
+Connect to ssh 
+ ssh -i Downloads/gymso_fit.pem ec2-user@13.51.150.69
+sudo -i
+systemctl status httpd
