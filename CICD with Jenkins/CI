@@ -1,0 +1,14 @@
+Code -> Build -> Test -> Push
+
+Problem? Code is merged but not integrated, which means developers push code several times in a day and when all the code is build together it throws conflicts, bugs, errors.
+
+Solution? Build code from VCS after every commit. CONTINUOUS INTEGRATION
+Developers push code changes frequently (daily or multiple times a day).
+Each push triggers an automated pipeline:
+Pull code from GitHub/GitLab/Bitbucket.
+Build/compile the project (e.g., with Maven, Gradle).
+Run tests (unit tests, integration tests).
+Check quality (linting, code coverage, SonarQube).
+👉 Goal: Catch bugs early and ensure all code integrates smoothly.
+
+CI Process : Developers -> VCS -> Fetch -> Build -> Test -> Notify -> Developers
