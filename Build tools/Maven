@@ -1,0 +1,35 @@
+build tool to automate the java build process
+XML Format
+
+Maven is a build automation and project management tool mainly used in Java projects. It helps developers manage:
+Key Features of Maven : 
+Build Automation → Compiles source code, runs tests, packages (JAR/WAR), and deploys automatically.
+Dependency Management → Automatically downloads required libraries (JARs) from the Maven Central Repository or custom repositories.
+Project Structure Standardization → Enforces a common directory structure (src/main/java, src/test/java).
+Plugins → Provides plugins for compiling, testing, packaging, deploying, etc.
+Lifecycle & Phases → Automates tasks like validate, compile, test, package, verify, install, deploy.
+
+my-app/
+ ├── src/
+ │   ├── main/java        (source code)
+ │   └── test/java        (test code)
+ ├── target/              (output files)
+ └── pom.xml              (Project Object Model file)
+
+Every Maven project has a pom.xml file where you define:
+Project info (groupId, artifactId, version)
+Dependencies (libraries your project needs)
+Build plugins
+
+mvn compile → Compiles source code.
+mvn test → Runs unit tests.
+mvn package → Creates JAR/WAR file in target/.
+mvn install → Installs package into local repository (~/.m2).
+mvn clean → Cleans target/ folder.
+mvn dependency:tree → Shows dependency hierarchy.
+
+ec2 ubuntu instance : ssh -i Downloads/buildkey.pem ubuntu@ip
+clone source code from git : git clone url
+installed jdk 21 : apt install openjdk-21-jdk -y
+installed maven : apt install maven -y
+Create target file : mvn install
