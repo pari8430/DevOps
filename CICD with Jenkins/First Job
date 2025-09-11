@@ -1,0 +1,7 @@
+Job in Jenkins a set of instructions or tasks that we want to execute.
+For example, fetch the source code, build the source code, generate the artifact, deploy the artifact.
+
+In dashboard, click on new item 
+You can give the same name or different and select over here Freestyle project.
+Give description -> build step and choose execute shell and write cmd : pwd, whoami, w
+Save it and click on build now and analyze the builds.
